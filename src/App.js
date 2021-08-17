@@ -6,13 +6,20 @@ export default function App() {
     "🤐": "Zipper",
     "🥵": "Hot",
     "😐": "Neutral",
-    "👻": "Ghost"
+    "👻": "Ghost",
+    "🤗": "Hugging",
+    "🤣": "ROFL",
+    "🙃": "Upside down",
+    "😆": "Grinning",
+    "😴": "Sleeping"
   };
   var emojiArray = Object.keys(emojiList);
   const [displaywordvar, setdisplaywordvar] = useState("");
   function displayWord(event) {
     //console.log(event.target.value);
-    setdisplaywordvar(emojiList[event.target.value]);
+    if (emojiList[event.target.value])
+      setdisplaywordvar(emojiList[event.target.value]);
+    else setdisplaywordvar("Emoji not found");
   }
   function emojiClickHandler(item) {
     console.log(item + "clicked");
